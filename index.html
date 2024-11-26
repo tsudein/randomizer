@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рандомайзер</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <!-- Світляні точки -->
+        <div class="circle" style="width: 100px; height: 100px; top: 10%; left: 20%;"></div>
+        <div class="circle" style="width: 150px; height: 150px; top: 70%; left: 50%;"></div>
+        <div class="circle" style="width: 80px; height: 80px; top: 40%; left: 10%;"></div>
+        <div class="circle" style="width: 120px; height: 120px; top: 60%; left: 80%;"></div>
+    </div>
+    <h1 id="random-number"></h1>
+    <button onclick="generateRandomNumber()">🎲 Згенерувати число</button>
+
+    <script>
+        function generateRandomNumber() {
+            const randomNumber = Math.floor(Math.random() * 6) + 1;
+            const randomText = `Ваше число: ${randomNumber}`;
+            document.getElementById('random-number').innerText = randomText;
+        }
+
+        // Генеруємо число при завантаженні сторінки
+        window.onload = generateRandomNumber;
+    </script>
+</body>
+</html>
